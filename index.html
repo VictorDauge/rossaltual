@@ -96,7 +96,7 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 .appointment-copy h3{font:700 30px Georgia,serif;margin-top:0}.appointment-copy p{color:#d6deea;line-height:1.8}.appointment-copy li{margin:10px 0;color:#f1f4f8}
 @media(max-width:900px){.catalogue-grid{grid-template-columns:1fr 1fr}.request-grid,.appointment-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.catalogue-grid{grid-template-columns:1fr}}
-<style>
+
 .campaign-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .campaign-grid .look{position:relative;min-height:260px;border-radius:16px;overflow:hidden;background:#071a36;box-shadow:var(--shadow);border:1px solid rgba(217,163,41,.22);cursor:pointer}
 .campaign-grid .look.featured{grid-column:span 2}
@@ -117,14 +117,18 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 
 .promise-strip{margin:0;padding:16px 5%;display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--navy);color:#fff;border-top:2px solid var(--gold);font-size:13px;letter-spacing:.04em}
 .promise-strip strong{font:700 20px Georgia,serif;color:var(--gold)}
-</style></style>
+section[id]{scroll-margin-top:100px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+@media(min-width:901px) and (max-width:1180px){nav{gap:10px;font-size:12px}.nav{gap:12px}.brand{flex-shrink:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
 </head>
 <body>
 <div class="topbar"><div class="container inner"><span>📍 Ahiua Street, Gordons • Port Moresby, NCD, PNG</span><span>☎ +675 7511 3978 • ✉ kaviakvillage1948@gmail.com</span></div></div>
 <header><div class="container nav">
 <a href="#home" class="brand"><div class="logo">RTI</div><div><strong>ROSSAL TUAL<br>IMMESS LIMITED</strong><span>Specialist in Clothing & Footwear</span></div></a>
-<nav><a href="#about">About</a><a href="#company-story">Company</a><a href="#services">Services</a><a href="#fashion">Fashion</a><a href="#evening">Special Day</a><a href="#catalogue">Catalogue</a><a href="#request">Order</a><a href="#appointment">Consultation</a><a href="#contact">Contact</a></nav>
-<button class="menu" onclick="document.querySelector('nav').style.display=document.querySelector('nav').style.display==='flex'?'none':'flex'">☰</button>
+<nav id="main-nav" aria-label="Main navigation"><a href="#about">About</a><a href="#company-story">Company</a><a href="#services">Services</a><a href="#fashion">Fashion</a><a href="#evening">Special Day</a><a href="#catalogue">Catalogue</a><a href="#request">Order</a><a href="#appointment">Consultation</a><a href="#contact">Contact</a></nav>
+<button class="menu" type="button" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false">☰</button>
 </div></header>
 
 <main id="home">
@@ -134,7 +138,7 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 <h1>Designed.<br><span>Made to Fit.</span></h1>
 <p>Rossal Tual Immess Limited creates tailored clothing and fashion solutions shaped around your measurements, occasion, personality and preferences.</p>
 <div class="tagline">“Designed made to fit”</div>
-<div class="hero-actions"><a class="btn primary" href="#contact">Start Your Custom Order</a><a class="btn gold" href="#fashion">Explore Our Styles</a><a class="btn gold" href="https://wa.me/67575113978?text=Hello%20Rossal%20Tual%20Immess%20Limited%2C%20I%20would%20like%20a%20tailoring%20consultation.">WhatsApp Us</a></div>
+<div class="hero-actions"><a class="btn primary" href="#request">Start Your Custom Order</a><a class="btn gold" href="#fashion">Explore Our Styles</a><a class="btn gold" href="https://wa.me/67575113978?text=Hello%20Rossal%20Tual%20Immess%20Limited%2C%20I%20would%20like%20a%20tailoring%20consultation.">WhatsApp Us</a></div>
 <div class="badges"><span class="badge">Custom Tailoring</span><span class="badge">Uniforms</span><span class="badge">Formal Wear</span><span class="badge">Special Occasion Wear</span></div>
 </div></div>
 </section>
@@ -176,7 +180,7 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 <div class="look"><img src="assets/children-wear.png" alt="Children's wear"><div class="label">Children’s Wear</div></div>
 <div class="look"><img src="assets/work-wear.png" alt="Work wear"><div class="label">Work Wear</div></div>
 </div></div>
-</div></section>
+</section>
 
 <section class="section" id="custom"><div class="container">
 <div class="head"><div class="kicker">Made to measure</div><h2>Your idea. Your measurements. Your garment.</h2><p>Custom tailoring gives customers the opportunity to shape the final garment rather than simply choosing an off-the-rack size.</p></div>
@@ -241,7 +245,7 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
   <button class="catalogue-card" onclick="selectService('School Uniforms')"><span>🎓</span><strong>School Uniforms</strong><small>Students & institutions</small></button>
   <button class="catalogue-card" onclick="selectService('Lawyer Gowns / Bibs')"><span>⚖</span><strong>Lawyer Gowns / Bibs</strong><small>Legal professional wear</small></button>
   <button class="catalogue-card" onclick="selectService('Evening & Special Day Outfits')"><span>✨</span><strong>Evening & Special Day</strong><small>Celebrations & occasions</small></button>
-  <button class="catalogue-card" onclick="selectService('Children’s Wear')"><span>👗</span><strong>Children's Wear</strong><small>Comfort & style</small></button>
+  <button class="catalogue-card" onclick="selectService(&quot;Children's Wear&quot;)"><span>👗</span><strong>Children's Wear</strong><small>Comfort & style</small></button>
   <button class="catalogue-card" onclick="selectService('Work Wear')"><span>🧥</span><strong>Work Wear</strong><small>Practical & durable</small></button>
 </div>
 </div></section>
@@ -252,8 +256,8 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 <p>Complete the form below. It prepares an enquiry message you can send directly to Rossal Tual Immess Limited.</p></div>
 <div class="request-grid">
 <form class="request-form" onsubmit="sendRequest(event)">
-<label>Full name<input id="custName" required placeholder="Your name"></label>
-<label>Phone / WhatsApp<input id="custPhone" required placeholder="+675 ..."></label>
+<label>Full name<input id="custName" autocomplete="name" required placeholder="Your name"></label>
+<label>Phone / WhatsApp<input id="custPhone" type="tel" autocomplete="tel" required placeholder="+675 ..."></label>
 <label>Garment / service<select id="service"><option>Men / Women Tailored Suits</option><option>Lawyer Gowns / Bibs</option><option>School Uniforms</option><option>Children's Wear</option><option>Work Wear</option><option>Evening & Special Day Outfits</option><option>Day Casual Wear</option><option>Other Custom Request</option></select></label>
 <label>Preferred date<input id="date" type="date"></label>
 <label>Fabric / colour / style preferences<textarea id="details" rows="5" placeholder="Describe your preferred design, colour, fabric, fit, neckline, sleeves, length, etc."></textarea></label>
@@ -274,8 +278,8 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 <div class="appointment-copy"><h3>From idea to finished garment</h3><p>Bring your preferred fabric, a reference image, an existing garment or simply an idea. The consultation can cover measurements, style, construction and finishing.</p>
 <ul><li>Design discussion</li><li>Measurements & fitting</li><li>Fabric and colour selection</li><li>Alterations and finishing</li></ul></div>
 <form class="appointment-form" onsubmit="sendAppointment(event)">
-<label>Name<input id="apptName" required></label>
-<label>Phone<input id="apptPhone" required></label>
+<label>Name<input id="apptName" autocomplete="name" required></label>
+<label>Phone<input id="apptPhone" type="tel" autocomplete="tel" required></label>
 <label>Preferred date<input id="apptDate" type="date" required></label>
 <label>Preferred time<input id="apptTime" type="time"></label>
 <label>What would you like to discuss?<textarea id="apptDetails" rows="4"></textarea></label>
@@ -303,8 +307,12 @@ footer{background:var(--navy);color:#dce3ec;padding:34px 0}.foot{display:flex;ju
 <footer><div class="container foot"><span>© 2026 Rossal Tual Immess Limited</span><span class="goldtext">Specialist in Clothing & Footwear • Designed made to fit</span></div></footer>
 <script>
 const nav=document.querySelector('nav');
-document.querySelector('.menu').addEventListener('click',()=>{nav.style.display=nav.style.display==='flex'?'none':'flex';});
-window.addEventListener('resize',()=>{if(innerWidth>900)nav.style.display='flex';});
+const menu=document.querySelector('.menu');
+function closeMenu(){nav.style.removeProperty('display');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');}
+menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';nav.style.display=open?'flex':'none';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
+window.addEventListener('resize',closeMenu);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();menu.focus();}});
 
 function selectService(name){
   const select=document.getElementById('service');
@@ -322,7 +330,7 @@ function sendRequest(e){
   const date=document.getElementById('date').value || 'Flexible';
   const details=document.getElementById('details').value || 'No additional details provided';
   const msg=`Hello Rossal Tual Immess Limited,%0A%0AI would like to make a tailoring enquiry.%0A%0AName: ${encodeURIComponent(name)}%0APhone/WhatsApp: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0APreferred date: ${encodeURIComponent(date)}%0ADesign preferences: ${encodeURIComponent(details)}`;
-  window.open(`https://wa.me/67575113978?text=${msg}`,'_blank');
+  window.location.assign(`https://wa.me/67575113978?text=${msg}`);
 }
 function sendAppointment(e){
   e.preventDefault();
@@ -332,7 +340,7 @@ function sendAppointment(e){
   const time=document.getElementById('apptTime').value || 'Flexible';
   const details=document.getElementById('apptDetails').value || 'Tailoring consultation';
   const msg=`Hello Rossal Tual Immess Limited,%0A%0AI would like to request a tailoring consultation.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0APreferred date: ${encodeURIComponent(date)}%0APreferred time: ${encodeURIComponent(time)}%0ADiscussion: ${encodeURIComponent(details)}`;
-  window.open(`https://wa.me/67575113978?text=${msg}`,'_blank');
+  window.location.assign(`https://wa.me/67575113978?text=${msg}`);
 }
 </script>
 
